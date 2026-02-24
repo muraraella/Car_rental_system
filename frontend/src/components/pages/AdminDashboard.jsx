@@ -21,7 +21,7 @@ function AdminDashboard() {
 
   const fetchCars = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/cars");
+      const res = await axios.get("http://localhost:5001/api/cars");
       setCars(res.data);
     } catch (error) {
       console.error(error);
@@ -33,7 +33,7 @@ function AdminDashboard() {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:5000/api/cars/${editingId}`,
+          `http://localhost:5001/api/cars/${editingId}`,
           form,
           {
             headers: { Authorization: token },
@@ -42,7 +42,7 @@ function AdminDashboard() {
         setEditingId(null);
       } else {
         await axios.post(
-          "http://localhost:5000/api/cars",
+          "http://localhost:5001/api/cars",
           form,
           {
             headers: { Authorization: token },
@@ -65,7 +65,7 @@ function AdminDashboard() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/cars/${id}`,
+        `http://localhost:5001/api/cars/${id}`,
         {
           headers: { Authorization: token },
         }

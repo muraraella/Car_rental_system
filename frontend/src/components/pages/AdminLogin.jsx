@@ -8,7 +8,7 @@ function AdminLogin() {
 
   const handleSubmit = async () => {
     const res = await axios.post(
-      "http://localhost:5000/api/admin/login",
+      "http://localhost:5001/api/admin/login",
       form
     );
     localStorage.setItem("token", res.data.token);

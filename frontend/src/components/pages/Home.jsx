@@ -6,7 +6,7 @@ function Home() {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/cars")
+    axios.get("http://localhost:5001/api/cars")
       .then(res => setCars(res.data));
   }, []);
 
